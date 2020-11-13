@@ -84,9 +84,9 @@ setInterval(function(){
     var data = [];
     for(let i in players){
         if(inputs[i].up){
-            players[i].yvel -= gravity*0.75;
-        } else if(inputs[i].down){
             players[i].yvel += gravity*0.75;
+        } else if(inputs[i].down){
+            players[i].yvel -= gravity*0.75;
         }
         if(inputs[i].left){
             players[i].xvel -= 0.1;
@@ -103,9 +103,9 @@ setInterval(function(){
         }
         players[i].x += players[i].xvel;
         players[i].y += players[i].yvel;
-        players[i].yvel += gravity;
-        if(players[i].y + players[i].s/2 > players[i].floor){
-            players[i].y = players[i].floor - players[i].s/2;
+        players[i].yvel -= gravity;
+        if(players[i].y < players[i].s/2){
+            players[i].y = players[i].s/2;
             players[i].yvel *= -.93;
         }
         for(let j in players){

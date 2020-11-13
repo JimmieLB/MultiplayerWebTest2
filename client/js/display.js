@@ -44,12 +44,12 @@ function draw(){
 
 function drawPlayer(plr){
     fill(255);
-    ellipse(plr.x,plr.y,plr.s);
+    ellipse(plr.x,height - plr.y,plr.s);
     players[i].x += players[i].xvel;
     players[i].y += players[i].yvel;
-    players[i].yvel += gravity;
-    if(players[i].y + players[i].s/2 > players[i].floor){
-        players[i].y = players[i].floor - players[i].s/2;
+    players[i].yvel -= gravity;
+    if(players[i].y < players[i].s/2){
+        players[i].y = players[i].s/2;
         players[i].yvel *= -.93;
     }
     fill(100,100,255);
@@ -58,7 +58,7 @@ function drawPlayer(plr){
     }
     textSize(playerSize * 0.5);
     textAlign(CENTER);
-    text(plr.id,plr.x,plr.y - playerSize*0.75);
+    text(plr.id,plr.x,height - plr.y - playerSize*0.75);
 }
 
 function generate_inputs(){
