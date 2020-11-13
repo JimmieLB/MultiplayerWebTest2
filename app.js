@@ -2,7 +2,7 @@ const { SSL_OP_NO_QUERY_MTU } = require('constants');
 let express = require('express');
 let app = express();
 let server = require('http').Server(app);
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 
 //Sends the website to the client.
 app.get('/', (req,res) => res.sendFile(__dirname + '/client/index.html'));
