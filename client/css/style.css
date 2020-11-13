@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: black;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100vh;
+    width: 100vw;
+}
+
+button{
+    background: #92FA4F;
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.pair{
+    width: 25vw;
+    height: 25vh;
+    float: left;
+    border: none;
+    text-align: center;
+    font-size: 3vmax;
+}
+
+#pair-div{
+    display: block;
+    width: 51vw;
+    margin: 0 auto;
+    font-size: 30px;
+}
