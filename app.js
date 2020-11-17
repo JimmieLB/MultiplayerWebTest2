@@ -1,6 +1,5 @@
 const { SSL_OP_NO_QUERY_MTU } = require('constants');
 let express = require('express');
-let Matter = require('matter-js');
 let app = express();
 let server = require('http').Server(app);
 const PORT = process.env.PORT || 2000;
