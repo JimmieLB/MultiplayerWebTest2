@@ -28,7 +28,7 @@ function setup(){
 }
 
 function draw(){
-    background(0);
+    background(51,160);
     generate_inputs();
     for(i in players){
         drawPlayer(players[i]);
@@ -44,7 +44,13 @@ function draw(){
 
 function drawPlayer(plr){
     fill(255);
-    ellipse(plr.x,height - plr.y,plr.s);
+    noStroke();
+    stroke(255);
+    strokeWeight(plr.s);
+    line(plr.x,height-plr.y,plr.x - plr.xvel,height -plr.y + plr.yvel);
+    // ellipse(plr.x,height - plr.y,plr.s);
+    strokeWeight(1);
+    noStroke();
     players[i].x += players[i].xvel;
     players[i].y += players[i].yvel;
     players[i].yvel -= gravity;
